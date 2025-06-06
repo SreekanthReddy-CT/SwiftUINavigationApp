@@ -16,7 +16,7 @@ This project demonstrates a modular, scalable SwiftUI app architecture using:
 ---
 
 ## Wireframe
-[Link to be added here]
+https://github.com/SreekanthReddy-CT/SwiftUINavigationApp/blob/main/NavigationStackFlow.png
 
 ---
 
