@@ -23,20 +23,3 @@ extension MusicRoute {
         }
     }
 }
-
-struct MusicFlow: View {
-    @ObservedObject var router: MusicRouter
-    
-    var body: some View {
-        NavigationStack(path: $router.path) {
-            MusicMainViewBuilder.build(router: router)
-                .navigationDestination(for: MusicRoute.self) { route in
-                    route.destinationView()
-                }
-        }
-    }
-}
-
-#Preview {
-    MusicFlow(router: MusicRouter())
-}

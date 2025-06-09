@@ -15,7 +15,7 @@ struct OnboardingView: View {
                 .font(.title)
             Spacer()
             Button("Completed") {
-                router.moveToDashboard()
+                router.navigate(to: .dashboard)
             }
             .padding()
             Spacer()

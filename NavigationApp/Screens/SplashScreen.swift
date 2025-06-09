@@ -19,9 +19,9 @@ struct SplashScreen: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 let shouldShowOnboarding = true
                 if shouldShowOnboarding {
-                    router.moveToOnboarding()
+                    router.navigate(to: .onboarding)
                 } else {
-                    router.moveToDashboard()
+                    router.navigate(to: .dashboard)
                 }
             }
         }

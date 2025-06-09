@@ -16,6 +16,15 @@ struct MusicMainView: View {
     var body: some View {
         mainContainer
             .navigationTitle("Music")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        viewModel.didTapProfile()
+                    }) {
+                        Image(systemName: "person.circle")
+                    }
+                }
+            }
     }
     
     var mainContainer: some View {
@@ -30,5 +39,5 @@ struct MusicMainView: View {
 }
 
 #Preview {
-    MusicMainViewBuilder.build(router: MusicRouter())
+    MusicMainViewBuilder.build(router: MusicRouter(), dashboardVM: nil)
 }

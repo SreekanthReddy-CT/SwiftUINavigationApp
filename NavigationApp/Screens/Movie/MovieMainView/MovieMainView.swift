@@ -16,6 +16,15 @@ struct MovieMainView: View {
     var body: some View {
         mainContainer
             .navigationTitle("Movies")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        viewModel.didTapProfile()
+                    }) {
+                        Image(systemName: "person.circle")
+                    }
+                }
+            }
     }
     
     var mainContainer: some View {
@@ -30,5 +39,5 @@ struct MovieMainView: View {
 }
 
 #Preview {
-    MovieMainViewBuilder.build(router: MovieRouter())
+    MovieMainViewBuilder.build(router: MovieRouter(), dashboardVM: nil)
 }

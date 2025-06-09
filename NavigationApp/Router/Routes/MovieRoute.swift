@@ -23,20 +23,3 @@ extension MovieRoute {
         }
     }
 }
-
-struct MovieFlow: View {
-    @ObservedObject var router: MovieRouter
-    
-    var body: some View {
-        NavigationStack(path: $router.path) {
-            MovieMainViewBuilder.build(router: router)
-                .navigationDestination(for: MovieRoute.self) { route in
-                    route.destinationView()
-                }
-        }
-    }
-}
-
-#Preview {
-    MovieFlow(router: MovieRouter())
-}

@@ -23,22 +23,3 @@ extension MoreRoute {
         }
     }
 }
-
-struct MoreFlow: View {
-    @ObservedObject var router: MoreRouter
-    
-    var body: some View {
-        NavigationStack(path: $router.path) {
-            MoreViewBuilder.build(router: router)
-                .environmentObject(router)
-                .navigationDestination(for: MoreRoute.self) { route in
-                    route.destinationView()
-                }
-        }
-    }
-}
-
-#Preview {
-    MoreFlow(router: MoreRouter())
-}
-

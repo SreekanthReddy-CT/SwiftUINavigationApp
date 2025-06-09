@@ -6,6 +6,11 @@
 import Foundation
 
 @MainActor
+protocol DashboardTabViewModelProtocol: AnyObject {
+    func switchToMoreAndShowProfile()
+}
+
+@MainActor
 final class DashboardTabViewModel: ObservableObject {
 
     enum Tab {
@@ -28,5 +33,12 @@ final class DashboardTabViewModel: ObservableObject {
     // Example method to switch tab programmatically (for cross-tab flow)
     func switchTo(tab: Tab) {
         selectedTab = tab
+    }
+}
+
+extension DashboardTabViewModel: DashboardTabViewModelProtocol {
+    func switchToMoreAndShowProfile() {
+        selectedTab = .more
+        moreRouter.navigate(to: .profile)
     }
 }

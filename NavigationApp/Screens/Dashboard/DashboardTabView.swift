@@ -31,7 +31,7 @@ struct DashboardTabView: View {
     }
     
     var musicTab: some View {
-        MusicFlow(router: viewModel.musicRouter)
+        MusicFlow(router: viewModel.musicRouter, dashboardVM: viewModel)
         .tabItem {
             Label("Music", systemImage: "music.note")
         }
@@ -39,7 +39,7 @@ struct DashboardTabView: View {
     }
     
     var movieTab: some View {
-        MovieFlow(router: viewModel.movieRouter)
+        MovieFlow(router: viewModel.movieRouter, dashboardVM: viewModel)
             .tabItem {
                 Label("Movie", systemImage: "film")
             }
